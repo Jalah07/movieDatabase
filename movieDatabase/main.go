@@ -1,14 +1,13 @@
 package main
 
 import (
+	"log"
 	"movieDatabase/handlers"
-
 )
 
-
-
 func main() {
-	handlers.NewServer()
+	server := handlers.NewServer()
+
+	log.Fatal(server.ListenAndServe())
 
 }
-
