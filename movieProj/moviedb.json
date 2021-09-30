@@ -1,0 +1,73 @@
+{
+ "Movies": [
+  {
+   "Id": "6b1e043e-c6c5-4df1-8c41-aaa1068e1a56",
+   "Title": "Avatar",
+   "Genre": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+   ],
+   "Description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+   "Director": "James Cameron",
+   "Actors": [
+    "Sam Worthington",
+    "Zoe Saldana",
+    "Sigourney Weaver",
+    "Stephen Lang"
+   ],
+   "Rating": 7.9
+  },
+  {
+   "Id": "02f587e0-9225-4caa-9016-e194b09b903f",
+   "Title": "Free Guy",
+   "Genre": [
+    "Comedy",
+    "Action"
+   ],
+   "Description": "An NPC in a video game becomes aware of his existance and starts a revolution in the gaming world.",
+   "Director": "Shawn Levy",
+   "Actors": [
+    "Ryan Reynolds",
+    "Joe Keery",
+    "Jodie Comer",
+    "Taika Waititi"
+   ],
+   "Rating": 7.4
+  },
+  {
+   "Id": "32f90439-ce2e-4877-a113-0ab3d045bdaa",
+   "Title": "Kingsman: The Secret Service",
+   "Genre": [
+    "Action",
+    "Comedy"
+   ],
+   "Description": "A spy organisation recruits a promising street kid into the agency's training program, while a global threat emerges from a twisted tech genius.",
+   "Director": "Matthew Vaughn",
+   "Actors": [
+    "Taron Egerton",
+    "Colin Firth",
+    "Samuel L. Jackson",
+    "Mark Strong"
+   ],
+   "Rating": 7.7
+  },
+  {
+   "Id": "e9f5d634-1f04-4011-8f63-51745b1b00aa",
+   "Title": "Forgetting Sarah Marshall",
+   "Genre": [
+    "Comedy",
+    "Romance"
+   ],
+   "Description": "A classic coming of age tale about heartbreak and healing, with a Dracula Musical",
+   "Director": "Nicholas Stoller",
+   "Actors": [
+    "Jason Segel",
+    "Mila Kunis",
+    "Russell Brand",
+    "Kristen Bell"
+   ],
+   "Rating": 10
+  }
+ ]
+}
