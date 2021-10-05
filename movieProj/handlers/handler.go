@@ -2,8 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
-
 	"movieProj/entities"
 	"movieProj/service"
 	"net/http"
@@ -11,13 +9,9 @@ import (
 	"github.com/gorilla/mux"
 )
 
-
-
 type MovieHandler struct {
 	Svc service.Service
 }
-
-
 
 func NewMovieHandler(s service.Service) MovieHandler {
 	return MovieHandler{
@@ -36,44 +30,70 @@ func (mh MovieHandler) PostMovieHandler(w http.ResponseWriter, r *http.Request) 
 	err = mh.Svc.CreateNewMovie(mv)
 
 	if err != nil {
-	switch err.Error() {
-	case "invalid rating": 
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		switch err.Error() {
+		case "invalid rating":
+			http.Error(w, err.Error(), http.StatusBadRequest)
 
-	case "movie does not exist":
-		http.Error(w, err.Error(), http.StatusNotFound)
+		case "movie does not exist":
+			http.Error(w, err.Error(), http.StatusNotFound)
+		}
+
 	}
-
-	}
-
-
 	w.WriteHeader(http.StatusCreated)
 	w.Header().Set("Content-Type", "application/json")
 }
 
+func (mh MovieHandler) GetMovieHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["Id"]
 
-
-func (mh MovieHandler) GetMovieHandler(w http.ResponseWriter, r *http.Request)  {
-	w.Header().Set("Content-Type", "application/json")
-	params := mux.Vars(r)
-	
-	id := params["Id"]
-	fmt.Println(id)
-/* 	movie := []entities.Movie{}
-	//fmt.Println(movie)
-	for _, item := range movie {
-		if item.Id == params["id"] {
-			json.NewEncoder(w).Encode(item)
-			
-			
-			return 
-		} 
-		fmt.Println(item.Id)
+	mvID, err := mh.Svc.FindById(id)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusNotFound)
 	}
-	//fmt.Println(params)
-	json.NewEncoder(w).Encode(&entities.Movie{}) */
-	//w.WriteHeader(http.StatusCreated)
-	//w.Header().Set("Content-Type", "application/json")
-	//w.Write([]byte(item))
-	
-} 
+
+	movie, err := json.MarshalIndent(mvID, "", " ")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusAccepted)
+	w.Write(movie)
+}
+
+func (mh MovieHandler) GetMoviesHandler(w http.ResponseWriter, r *http.Request) {
+	myDb, err := mh.Svc.GetMovies()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	movieDb, err := json.MarshalIndent(myDb, "", " ")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusCreated)
+	w.Write(movieDb)
+}
+
+func (mh MovieHandler) DeleteMovieHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["Id"]
+
+	mvID, err := mh.Svc.FindById(id)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusNotFound)
+	}
+
+	movie, err := json.MarshalIndent(mvID, "", " ")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusAccepted)
+	w.Write(movie)
+	json.NewEncoder(w).Encode(movie)
+}

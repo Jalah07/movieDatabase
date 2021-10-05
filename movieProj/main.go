@@ -25,12 +25,11 @@ func main() {
 
 	router := handlers.ConfigureRouter(hdlr)
 
-	svr := &http.Server {
+	svr := &http.Server{
 		Addr:    "127.0.0.1:8080",
 		Handler: router,
 	}
 
 	log.Fatalln(svr.ListenAndServe())
 
-	
 }
