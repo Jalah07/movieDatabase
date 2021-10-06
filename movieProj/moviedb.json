@@ -1,7 +1,7 @@
 {
  "Movies": [
   {
-   "Id": "6b1e043e-c6c5-4df1-8c41-aaa1068e1a56",
+   "Id": "cff4ab93-1863-462f-b1d8-d76fc29668e3",
    "Title": "Avatar",
    "Genre": [
     "Action",
@@ -19,55 +19,199 @@
    "Rating": 7.9
   },
   {
-   "Id": "02f587e0-9225-4caa-9016-e194b09b903f",
-   "Title": "Free Guy",
-   "Genre": [
-    "Comedy",
-    "Action"
-   ],
-   "Description": "An NPC in a video game becomes aware of his existance and starts a revolution in the gaming world.",
-   "Director": "Shawn Levy",
-   "Actors": [
-    "Ryan Reynolds",
-    "Joe Keery",
-    "Jodie Comer",
-    "Taika Waititi"
-   ],
-   "Rating": 7.4
-  },
-  {
-   "Id": "32f90439-ce2e-4877-a113-0ab3d045bdaa",
-   "Title": "Kingsman: The Secret Service",
+   "Id": "ba8aa414-17b6-42a7-b6a9-40be6d7c664a",
+   "Title": "Spider-Man: Into the Spider-Verse",
    "Genre": [
     "Action",
+    "Adventure",
+    "Fantasy"
+   ],
+   "Description": "New York City teenager Miles Morales struggles to live up to the expectations of his father, police officer Jefferson Davis, who sees Spider-Man as a menace. Miles adjusts to prep school, and visits his uncle Aaron Davis, who takes him to an abandoned subway station to paint graffiti. Miles is bitten by a radioactive spider and gains spider-like abilities similar to Spider-Man",
+   "Director": "Bob Persichetti",
+   "Actors": [
+    "Shameik Moore",
+    "Jake Johnson",
+    "Hailee Steinfeld",
+    "Mahershala Ali",
+    "Brian Tyree Henry",
+    "Lily Tomlin",
+    "Luna Lauren Velez",
+    "John Mulaney",
+    "Kimiko Glenn",
+    "Nicolas Cage",
+    "Liev Schreiber"
+   ],
+   "Rating": 8.4
+  },
+  {
+   "Id": "aa4d3a53-0746-4320-b3ce-0ffdda27a816",
+   "Title": "Venom",
+   "Genre": [
+    "Action",
+    "Fantasy",
+    "Sci-Fi",
+    "Adventure"
+   ],
+   "Description": "Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage, Venom tries to control the new and dangerous abilities that Eddie finds so intoxicating.",
+   "Director": "Ruben Fleischer",
+   "Actors": [
+    "Tom Hardy",
+    "Michelle Williams",
+    "Riz Ahmed",
+    "Scott Haze",
+    "Reid Scott"
+   ],
+   "Rating": 6.7
+  },
+  {
+   "Id": "ef36e026-94c0-4220-a85c-8801d6060311",
+   "Title": "Parasite",
+   "Genre": [
+    "Drama",
+    "Comedy",
+    "Mystery",
+    "Thriller"
+   ],
+   "Description": "Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage, Venom tries to control the new and dangerous abilities that Eddie finds so intoxicating.",
+   "Director": "Bong Joon-ho",
+   "Actors": [
+    "Song Kang-ho",
+    "Lee Sun-kyun",
+    "Cho Yeo-jeong",
+    "Choi Woo-shik",
+    "Park So-dam",
+    "Lee Jung-eun",
+    "Jang Hye-jin"
+   ],
+   "Rating": 8.6
+  },
+  {
+   "Id": "cd515950-a520-496f-b802-4627054c9bea",
+   "Title": "Rocky",
+   "Genre": [
+    "Drama"
+   ],
+   "Description": "Rocky Balboa (Sylvester Stallone), a small-time boxer from working-class Philadelphia, is arbitrarily chosen to take on the reigning world heavyweight champion, Apollo Creed (Carl Weathers), when the undefeated fighter's scheduled opponent is injured. While training with feisty former bantamweight contender Mickey Goldmill (Burgess Meredith), Rocky tentatively begins a relationship with Adrian (Talia Shire), the wallflower sister of his meat-packer pal Paulie (Burt Young).",
+   "Director": "",
+   "Actors": [
+    "Sylvester Stallone",
+    "Talia Shire",
+    "Burt Young",
+    "Carl Weathers",
+    "Burgess Meredith"
+   ],
+   "Rating": 8.1
+  },
+  {
+   "Id": "76e551bc-7a0f-48cd-a8c4-5c3240675913",
+   "Title": "Jaws",
+   "Genre": [
+    "Horror",
+    "Adventure",
+    "Mystery",
+    "Thriller"
+   ],
+   "Description": "When a young woman is killed by a shark while skinny-dipping near the New England tourist town of Amity Island, police chief Martin Brody (Roy Scheider) wants to close the beaches, but mayor Larry Vaughn (Murray Hamilton) overrules him, fearing that the loss of tourist revenue will cripple the town. Ichthyologist Matt Hooper (Richard Dreyfuss) and grizzled ship captain Quint (Robert Shaw) offer to help Brody capture the killer beast, and the trio engage in an epic battle of man vs. nature.",
+   "Director": "Steven Spielberg",
+   "Actors": [
+    "Roy Scheider",
+    "Robert Shaw",
+    "Richard Dreyfuss",
+    "Lorraine Gary",
+    "Murray Hamilton"
+   ],
+   "Rating": 8
+  },
+  {
+   "Id": "b8fc98e3-cb9c-4890-970e-4fa6fe0f40e2",
+   "Title": "Jurassic Park",
+   "Genre": [
+    "Action",
+    "Mystery",
+    "Thriller",
+    "Sci-Fi",
+    "Adventure"
+   ],
+   "Description": "In Steven Spielberg's massive blockbuster, paleontologists Alan Grant (Sam Neill) and Ellie Sattler (Laura Dern) and mathematician Ian Malcolm (Jeff Goldblum) are among a select group chosen to tour an island theme park populated by dinosaurs created from prehistoric DNA. While the park's mastermind, billionaire John Hammond (Richard Attenborough), assures everyone that the facility is safe, they find out otherwise when various ferocious predators break free and go on the hunt.",
+   "Director": "Steven Spielberg",
+   "Actors": [
+    "Sam Neill",
+    "Laura Dern",
+    "Jeff Goldblum",
+    "Richard Attenborough",
+    "Bob Peck",
+    "Martin Ferrero",
+    "BD Wong",
+    "Samuel L. Jackson",
+    "Wayne Knight",
+    "Joseph Mazzello",
+    "Ariana Richards"
+   ],
+   "Rating": 8.1
+  },
+  {
+   "Id": "d27d274d-29ca-4e98-ad97-a7b0845568f8",
+   "Title": "Silver Linings Playbook",
+   "Genre": [
+    "Drama",
+    "Romance",
     "Comedy"
    ],
-   "Description": "A spy organisation recruits a promising street kid into the agency's training program, while a global threat emerges from a twisted tech genius.",
-   "Director": "Matthew Vaughn",
+   "Description": "After losing his job and wife, and spending time in a mental institution, Pat Solatano (Bradley Cooper) winds up living with his parents (Robert De Niro, Jacki Weaver). He wants to rebuild his life and reunite with his wife, but his parents would be happy if he just shared their obsession with the Philadelphia Eagles. Things get complicated when Pat meets Tiffany (Jennifer Lawrence), who offers to help him reconnect with his wife, if he will do something very important for her in exchange.",
+   "Director": "David O. Russell",
    "Actors": [
-    "Taron Egerton",
-    "Colin Firth",
-    "Samuel L. Jackson",
-    "Mark Strong"
+    "Bradley Cooper",
+    "Jennifer Lawrence",
+    "Robert De Niro",
+    "Jacki Weaver",
+    "Anupam Kher",
+    "Chris Tucker"
    ],
    "Rating": 7.7
   },
   {
-   "Id": "e9f5d634-1f04-4011-8f63-51745b1b00aa",
-   "Title": "Forgetting Sarah Marshall",
+   "Id": "db35589e-be0d-41c9-b1a6-f7ae442fe85a",
+   "Title": "Pulp Fiction",
    "Genre": [
-    "Comedy",
-    "Romance"
+    "Drama",
+    "Crime"
    ],
-   "Description": "A classic coming of age tale about heartbreak and healing, with a Dracula Musical",
-   "Director": "Nicholas Stoller",
+   "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+   "Director": "",
    "Actors": [
-    "Jason Segel",
-    "Mila Kunis",
-    "Russell Brand",
-    "Kristen Bell"
+    "John Travolta",
+    "Samuel L. Jackson",
+    "Uma Thurman",
+    "Harvey Keitel",
+    "Tim Roth",
+    "Amanda Plummer",
+    "Maria de Medeiros",
+    "Ving Rhames",
+    "Eric Stoltz",
+    "Rosanna Arquette",
+    "Christopher Walken",
+    "Bruce Willis"
    ],
-   "Rating": 10
+   "Rating": 8.9
+  },
+  {
+   "Id": "66ec2904-21cd-43d6-a0e2-fef14acc56a2",
+   "Title": "Back to the Future",
+   "Genre": [
+    "Fantasy",
+    "Sci-Fi",
+    "Comedy",
+    "Adventure"
+   ],
+   "Description": "In this 1980s sci-fi classic, small-town California teen Marty McFly (Michael J. Fox) is thrown back into the '50s when an experiment by his eccentric scientist friend Doc Brown (Christopher Lloyd) goes awry. Traveling through time in a modified DeLorean car, Marty encounters young versions of his parents (Crispin Glover, Lea Thompson), and must make sure that they fall in love or he'll cease to exist. Even more dauntingly, Marty has to return to his own time and save the life of Doc Brown.",
+   "Director": "Robert Zemeckis",
+   "Actors": [
+    "Michael J. Fox",
+    "Christopher Lloyd",
+    "Lea Thompson",
+    "Crispin Glover"
+   ],
+   "Rating": 8.5
   }
  ]
 }

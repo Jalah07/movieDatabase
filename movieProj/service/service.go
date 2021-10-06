@@ -40,10 +40,17 @@ func (s Service) GetMovies() (repo.MovieStruct, error) {
 	return mv, nil
 }
 
-func (s Service) DeleteMovie(id string) (entities.Movie, error) {
-	movie, err := s.Repo.FindById(id)
-	if err != nil {
-		return movie, nil
+func (s Service) DeleteMovie(id string) (err error) {
+ 	if err != nil {
+		return err
 	}
-	return movie, nil
+	return s.Repo.DeleteMovie(id)
+}
+
+func (s Service) UpdateMovie(mv entities.Movie, id string) (err  error) {
+	err = s.Repo.UpdateMovie(mv, id)
+	if err != nil {
+		return  err
+	}
+	return err
 }

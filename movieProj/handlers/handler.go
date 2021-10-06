@@ -82,18 +82,34 @@ func (mh MovieHandler) DeleteMovieHandler(w http.ResponseWriter, r *http.Request
 	vars := mux.Vars(r)
 	id := vars["Id"]
 
-	mvID, err := mh.Svc.FindById(id)
+	err := mh.Svc.DeleteMovie(id)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusNotFound)
 	}
 
-	movie, err := json.MarshalIndent(mvID, "", " ")
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+}
+
+ func (mh MovieHandler) UpdateMovieHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["Id"]
+
+	mv := entities.Movie{}
+
+	err := json.NewDecoder(r.Body).Decode(&mv)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusInternalServerError) // Check this error code
 	}
 
+	err = mh.Svc.UpdateMovie(mv,id)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusNotFound)
+	}
+
+	
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusAccepted)
-	w.Write(movie)
-	json.NewEncoder(w).Encode(movie)
-}
+	w.WriteHeader(http.StatusOK)
+	
+} 
+

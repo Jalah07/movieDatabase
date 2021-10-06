@@ -86,26 +86,61 @@ func (r Repo) GetMovies() (MovieStruct, error) {
 	return movies, nil
 }
 
-func (r Repo) DeleteMovie(id string) (entities.Movie, error) {
+func (r Repo) DeleteMovie(id string) (error) {
+	movies := MovieStruct{}
 	file, err := ioutil.ReadFile(r.Filename)
 	if err != nil {
 		fmt.Println(err)
 	}
-	movies := MovieStruct{}
+
+	
 	err = json.Unmarshal(file, &movies)
 	if err != nil {
-
 		fmt.Println(err)
 	}
-
-	moviedb := entities.Movie{}
 
 	for index, movie := range movies.Movies {
 		if movie.Id == id {
 			movies.Movies = append(movies.Movies[:index], movies.Movies[index+1:]...)
-			return moviedb, nil
+			output, err := json.MarshalIndent(&movies, "", " ")
+			if err != nil {
+				return err
+			}
+			ioutil.WriteFile(r.Filename, output, 0644)
+			return nil
 		}
 	}
-	return moviedb, nil
-
+	return nil
 }
+
+func (r Repo) UpdateMovie( mv entities.Movie, id string) (error) {
+	movies := MovieStruct{}
+	file, err := ioutil.ReadFile(r.Filename)
+	if err != nil {
+		fmt.Println(err)
+	}
+	
+	err = json.Unmarshal(file, &movies)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for index, movie := range movies.Movies {
+		if movie.Id == id {
+			
+			movies.Movies = append(movies.Movies[:index], movies.Movies[index+1:]...)
+			movie.Id = id
+			movies.Movies = append(movies.Movies, mv) 
+			
+			
+		}
+	}
+	output, err := json.MarshalIndent(&movies, "", " ")
+			if err != nil {
+				return err
+			}
+			ioutil.WriteFile(r.Filename, output, 0644)
+			return err
+	
+}
+
