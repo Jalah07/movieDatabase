@@ -91,7 +91,7 @@ func (mh MovieHandler) DeleteMovieHandler(w http.ResponseWriter, r *http.Request
 	w.WriteHeader(http.StatusOK)
 }
 
- func (mh MovieHandler) UpdateMovieHandler(w http.ResponseWriter, r *http.Request) {
+func (mh MovieHandler) UpdateMovieHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["Id"]
 
@@ -102,14 +102,12 @@ func (mh MovieHandler) DeleteMovieHandler(w http.ResponseWriter, r *http.Request
 		http.Error(w, err.Error(), http.StatusInternalServerError) // Check this error code
 	}
 
-	err = mh.Svc.UpdateMovie(mv,id)
+	err = mh.Svc.UpdateMovie(mv, id)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusNotFound)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 	}
 
-	
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	
-} 
 
+}

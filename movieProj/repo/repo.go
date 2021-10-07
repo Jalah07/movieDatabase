@@ -2,7 +2,7 @@ package repo
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 	"io/ioutil"
 	"movieProj/entities"
 )
@@ -51,15 +51,14 @@ func (r Repo) CreateNewMovie(mv entities.Movie) error {
 func (r Repo) FindById(id string) (entities.Movie, error) {
 	file, err := ioutil.ReadFile(r.Filename)
 	if err != nil {
-		fmt.Println(err)
+		return entities.Movie{}, errors.New("could not read file")
 	}
+
 	movies := MovieStruct{}
 	err = json.Unmarshal(file, &movies)
 	if err != nil {
-
-		fmt.Println(err)
+		return entities.Movie{}, errors.New("failed to unmarshal content")
 	}
-
 	moviedb := entities.Movie{}
 
 	for _, movie := range movies.Movies {
@@ -75,7 +74,7 @@ func (r Repo) FindById(id string) (entities.Movie, error) {
 func (r Repo) GetMovies() (MovieStruct, error) {
 	file, err := ioutil.ReadFile(r.Filename)
 	if err != nil {
-		fmt.Println(err)
+		return MovieStruct{}, err
 	}
 
 	movies := MovieStruct{}
@@ -86,17 +85,16 @@ func (r Repo) GetMovies() (MovieStruct, error) {
 	return movies, nil
 }
 
-func (r Repo) DeleteMovie(id string) (error) {
+func (r Repo) DeleteMovie(id string) error {
 	movies := MovieStruct{}
 	file, err := ioutil.ReadFile(r.Filename)
 	if err != nil {
-		fmt.Println(err)
+		return errors.New("could not read file")
 	}
 
-	
 	err = json.Unmarshal(file, &movies)
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
 
 	for index, movie := range movies.Movies {
@@ -113,34 +111,30 @@ func (r Repo) DeleteMovie(id string) (error) {
 	return nil
 }
 
-func (r Repo) UpdateMovie( mv entities.Movie, id string) (error) {
+func (r Repo) UpdateMovie(mv entities.Movie, id string) error {
 	movies := MovieStruct{}
 	file, err := ioutil.ReadFile(r.Filename)
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
-	
+
 	err = json.Unmarshal(file, &movies)
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
 
 	for index, movie := range movies.Movies {
 		if movie.Id == id {
-			
 			movies.Movies = append(movies.Movies[:index], movies.Movies[index+1:]...)
 			movie.Id = id
-			movies.Movies = append(movies.Movies, mv) 
-			
-			
+			movies.Movies = append(movies.Movies, mv)
 		}
 	}
 	output, err := json.MarshalIndent(&movies, "", " ")
-			if err != nil {
-				return err
-			}
-			ioutil.WriteFile(r.Filename, output, 0644)
-			return err
-	
-}
+	if err != nil {
+		return err
+	}
+	ioutil.WriteFile(r.Filename, output, 0644)
+	return err
 
+}
