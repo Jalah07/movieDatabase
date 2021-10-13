@@ -2,18 +2,25 @@ package handlers
 
 import (
 	"encoding/json"
-	"movieProj/entities"
-	"movieProj/service"
-	"net/http"
-
 	"github.com/gorilla/mux"
+	"movieProj/entities"
+	"movieProj/repo"
+	"net/http"
 )
 
-type MovieHandler struct {
-	Svc service.Service
+type Service interface {
+	CreateNewMovie(mv entities.Movie) error
+	GetMovies() (repo.MovieStruct, error)
+	FindById(id string) (entities.Movie, error)
+	DeleteMovie(id string) (err error)
+	UpdateMovie(mv entities.Movie, id string) (err error)
 }
 
-func NewMovieHandler(s service.Service) MovieHandler {
+type MovieHandler struct {
+	Svc Service
+}
+
+func NewMovieHandler(s Service) MovieHandler {
 	return MovieHandler{
 		Svc: s,
 	}
@@ -74,7 +81,7 @@ func (mh MovieHandler) GetMoviesHandler(w http.ResponseWriter, r *http.Request) 
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusCreated)
+	w.WriteHeader(http.StatusOK)
 	w.Write(movieDb)
 }
 

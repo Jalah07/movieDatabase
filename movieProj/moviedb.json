@@ -1,24 +1,6 @@
 {
  "Movies": [
   {
-   "Id": "cff4ab93-1863-462f-b1d8-d76fc29668e3",
-   "Title": "Avatar",
-   "Genre": [
-    "Action",
-    "Adventure",
-    "Fantasy"
-   ],
-   "Description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-   "Director": "James Cameron",
-   "Actors": [
-    "Sam Worthington",
-    "Zoe Saldana",
-    "Sigourney Weaver",
-    "Stephen Lang"
-   ],
-   "Rating": 7.9
-  },
-  {
    "Id": "ba8aa414-17b6-42a7-b6a9-40be6d7c664a",
    "Title": "Spider-Man: Into the Spider-Verse",
    "Genre": [
@@ -193,6 +175,25 @@
     "Bruce Willis"
    ],
    "Rating": 8.9
+  },
+  {
+   "Id": "66ec2904-21cd-43d6-a0e2-fef14acc56a2",
+   "Title": "Back to the Future",
+   "Genre": [
+    "Fantasy",
+    "Sci-Fi",
+    "Comedy",
+    "Adventure"
+   ],
+   "Description": "In this 1980s sci-fi classic, small-town California teen Marty McFly (Michael J. Fox) is thrown back into the '50s when an experiment by his eccentric scientist friend Doc Brown (Christopher Lloyd) goes awry. Traveling through time in a modified DeLorean car, Marty encounters young versions of his parents (Crispin Glover, Lea Thompson), and must make sure that they fall in love or he'll cease to exist. Even more dauntingly, Marty has to return to his own time and save the life of Doc Brown.",
+   "Director": "Robert Zemeckis",
+   "Actors": [
+    "Michael J. Fox",
+    "Christopher Lloyd",
+    "Lea Thompson",
+    "Crispin Glover"
+   ],
+   "Rating": 8.5
   },
   {
    "Id": "66ec2904-21cd-43d6-a0e2-fef14acc56a2",

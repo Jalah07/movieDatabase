@@ -6,11 +6,19 @@ import (
 	"movieProj/repo"
 )
 
-type Service struct {
-	Repo repo.Repo
+type Repository interface {
+	CreateNewMovie(mv entities.Movie) error
+	GetMovies() (repo.MovieStruct, error)
+	FindById(id string) (entities.Movie, error)
+	DeleteMovie(id string) (err error)
+	UpdateMovie(mv entities.Movie, id string) (err error)
 }
 
-func NewService(r repo.Repo) Service {
+type Service struct {
+	Repo Repository
+}
+
+func NewService(r Repository) Service {
 	return Service{
 		Repo: r,
 	}
@@ -24,6 +32,7 @@ func (s Service) CreateNewMovie(mv entities.Movie) error {
 	return errors.New("invaild rating")
 }
 
+// return errors.Wrap(err, "some information")
 func (s Service) FindById(id string) (entities.Movie, error) {
 	movie, err := s.Repo.FindById(id)
 	if err != nil {
@@ -52,5 +61,5 @@ func (s Service) UpdateMovie(mv entities.Movie, id string) (err error) {
 	if err != nil {
 		return err
 	}
-	return err
+	return nil
 }

@@ -7,7 +7,7 @@ import (
 	"movieProj/entities"
 )
 
-type MovieStruct struct { // m
+type MovieStruct struct {
 	Movies []entities.Movie
 }
 
@@ -105,7 +105,7 @@ func (r Repo) DeleteMovie(id string) error {
 				return err
 			}
 			ioutil.WriteFile(r.Filename, output, 0644)
-			return nil
+			return err
 		}
 	}
 	return nil
